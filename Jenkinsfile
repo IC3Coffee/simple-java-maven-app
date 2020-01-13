@@ -26,5 +26,11 @@ pipeline {
                 sh './jenkins/scripts/deliver.sh' 
             }
         }
+	post {
+		success {
+			archiveArtifacts 'target/my-app-1.0-SNAPSHOT.jar'
+		}
+        }
+
     }
 }
